@@ -1,5 +1,6 @@
 {
   "name": "AdBlock JapScan",
+  "author": "Kalat",
   "description": "Permet de masquer les pub sur JapScan",
   "version": "1.0.0",
   "browser_action": {
