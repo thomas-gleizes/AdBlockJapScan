@@ -1,7 +1,10 @@
 
-let tab = document.querySelectorAll(".FbsYi");
-for (let i = 0; i < tab.length; i++){
-    console.log(tab[i]);
-    tab[i].innerHTML = "";
-}
+const selectors = ['.FbsYi']
 
+selectors.forEach(selector => {
+    let adds = document.querySelectorAll(selector)
+    adds.forEach(add => {
+        add.innerHTML = ''
+        add.src = '';
+    })
+});
