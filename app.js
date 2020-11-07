@@ -1,4 +1,4 @@
-const selectors = ['.FbsYi', '.vdo_floating']
+const selectors = ['.FbsYi', '.vdo_floating', '#vdo_ads_frame']
 
 const deleteAdd = () => {
     selectors.forEach(selector => {
