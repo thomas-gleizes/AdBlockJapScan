@@ -1,4 +1,4 @@
-const selectors = ['.FbsYi', '.vdo_floating', '#vdo_ads_frame']
+const selectors = ['.FbsYi', '.vdo_floating', '#vdo_ads_frame', '.ts-inpage-push-dating']
 
 const deleteAdd = () => {
     selectors.forEach(selector => {
