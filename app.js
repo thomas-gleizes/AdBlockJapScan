@@ -5,8 +5,9 @@ const deleteAdd = () => {
         let adds = document.querySelectorAll(selector)
         adds.forEach(add => {
             if (add.innerHTML !== '') console.log(add)
+            add.style.display = 'none'
             add.innerHTML = ''
-            add.src = '';
+            add.src = ''
         })
     });
 }
