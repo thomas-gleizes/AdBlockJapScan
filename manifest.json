@@ -3,6 +3,10 @@
   "author": "Kalat",
   "description": "Permet de masquer les pub sur JapScan",
   "version": "1.0.0",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
   "browser_action": {
     "default_icon": "favicons.png",
     "default_popup": "popUp.html"
