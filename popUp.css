@@ -1,0 +1,44 @@
+
+html {
+    background-color: transparent;
+}
+
+body {
+    width: 300px;
+    border: 3px solid #a00101;
+    margin: 0;
+    padding: 2px;
+    border-radius: 2px;
+    background-color: transparent;
+    font-family: sans-serif;
+}
+
+header > div {
+    margin: 0;
+    width: 95%;
+    background-color: #1f1f1f;
+}
+
+h1 {
+    color: #c4151c;
+    margin: 0;
+}
+
+main {
+    margin: 20px;
+    font-size: 150%;
+}
+
+button {
+    background-color: #921616 ;
+    color: white;
+    border-radius: 2px;
+    margin: auto;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.div-btn {
+    margin: 10px auto;
+    width: 80%;
+}

@@ -1,5 +1,7 @@
 const selectors = ['.FbsYi', '.vdo_floating', '#vdo_ads_frame', '.ts-inpage-push-dating']
 
+console.log(localStorage.getItem("test"))
+
 const deleteAdd = () => {
     selectors.forEach(selector => {
         let adds = document.querySelectorAll(selector)

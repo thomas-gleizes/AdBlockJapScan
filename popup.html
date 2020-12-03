@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>PopUp </title>
+    <link href="popUp.css" rel="stylesheet" type="text/css">
+    <script defer type="text/javascript" src="popUp.js"></script>
+</head>
+<body>
+<header>
+    <div>
+        <h1> AddBlock JapScan </h1>
+    </div>
+</header>
+<main>
+    <form id="AddSelector" name="AddSelector">
+        <div class="input">
+            <label for="typeSelector">Type : </label>
+            <select id="typeSelector" name="type">
+                <option value="." selected> Class </option>
+                <option value="#"> Id </option>
+                <option value=""> Element </option>
+            </select>
+        </div>
+        <div class="input">
+            <label for="selector">Selector : </label>
+            <input type="text" name="selector" id="selector" required>
+        </div>
+        <div class="div-btn">
+            <button type="submit"> Ajouter selecteur </button>
+        </div>
+
+    </form>
+</main>
+
+</body>
+</html>
