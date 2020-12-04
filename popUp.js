@@ -18,6 +18,7 @@ document.querySelector("#AddSelector").addEventListener('submit', event => {
                 alert("Le selectors existe déja.")
             }
         }
+        generateListe(document.querySelector("#h-liste > .btn"))
     });
 })
 
@@ -25,20 +26,18 @@ const generateListe = target => {
     let list = document.querySelector('div#list')
     list.innerHTML = "";
     chrome.storage.sync.get(["selectors"], result => {
-        if (typeof result.selectors !== "undefined") {
+        if (typeof result.selectors !== "undefined" && result.selectors.length !== 0) {
             result.selectors.forEach(selector => {
                 let data = utf8_to_b64(selector)
                 list.innerHTML += `<div> ${selector} <img id="${data}" src='clear.svg' alt='clear'/></div>`
-                document.querySelector(`#${data}`).addEventListener('click', () => {
+                document.getElementById(data).addEventListener('click', () => {
                     deleteSelector(b64_to_utf8(data))
                 })
             })
-            target.style.display = "none"
         } else {
             list.innerHTML = "<div> Auncune selecteurs </div>"
-            target.style.display = "unset"
-            target.innerHTML = "Refresh"
         }
+        target.innerHTML = "Refresh"
     })
 }
 
