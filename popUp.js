@@ -21,20 +21,23 @@ document.querySelector("#AddSelector").addEventListener('submit', event => {
     });
 })
 
-document.querySelector("#h-liste > .btn").addEventListener('click', event => {
-    event.target.style.display = "none"
-    generateListe()
-})
-
-const generateListe = () => {
+const generateListe = target => {
     let list = document.querySelector('div#list')
     list.innerHTML = "";
     chrome.storage.sync.get(["selectors"], result => {
         if (typeof result.selectors !== "undefined") {
             result.selectors.forEach(selector => {
-                let img = document.createElement('img')
-                list.innerHTML += `<div> ${selector} <img onclick="deleteSelector('${selector}')" src='clear.svg' alt='clear'/></div>`
+                let data = utf8_to_b64(selector)
+                list.innerHTML += `<div> ${selector} <img id="${data}" src='clear.svg' alt='clear'/></div>`
+                document.querySelector(`#${data}`).addEventListener('click', () => {
+                    deleteSelector(b64_to_utf8(data))
+                })
             })
+            target.style.display = "none"
+        } else {
+            list.innerHTML = "<div> Auncune selecteurs </div>"
+            target.style.display = "unset"
+            target.innerHTML = "Refresh"
         }
     })
 }
@@ -44,7 +47,20 @@ const deleteSelector = selector => {
         let tab = result.selectors
         if (typeof tab !== "undefined" && tab.includes(selector)){
             tab.splice(tab.indexOf(selector, 1))
-            console.log(tab);
+            chrome.storage.sync.set({"selectors": tab})
+            generateListe(document.querySelector("#h-liste > .btn"))
         }
     })
+}
+
+document.querySelector("#h-liste > .btn").addEventListener('click', event => {
+    generateListe(event.target);
+})
+
+const utf8_to_b64 = str => {
+    return window.btoa(unescape(encodeURIComponent(str)));
+}
+
+const b64_to_utf8 = str => {
+    return decodeURIComponent(escape(window.atob(str)));
 }

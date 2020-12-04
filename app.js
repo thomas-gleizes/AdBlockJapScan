@@ -2,8 +2,6 @@
 
 let selectors = [];
 
-console.log("ADBLOCK JAPSCAN ================================")
-
 chrome.storage.sync.get(['selectors'], result => {
     selectors = result.selectors
     console.log(selectors)
@@ -14,7 +12,7 @@ chrome.storage.sync.get(['selectors'], result => {
 
 const deleteAdd = () => {
     selectors.forEach(selector => {
-        let adds = document.querySelectorAll(selector)
+        const adds = document.querySelectorAll(selector)
         adds.forEach(add => {
             if (add.innerHTML !== '') console.log(add)
             add.style.display = 'none'
