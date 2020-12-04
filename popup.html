@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-WOdSzz11/3cpqOdrm89LBL2UPwEU9EhbDtMy2OciEhs='">
     <title>PopUp </title>
     <link href="popUp.css" rel="stylesheet" type="text/css">
     <script defer type="text/javascript" src="popUp.js"></script>
@@ -13,24 +14,31 @@
     </div>
 </header>
 <main>
-    <form id="AddSelector" name="AddSelector">
-        <div class="input">
-            <label for="typeSelector">Type : </label>
-            <select id="typeSelector" name="type">
-                <option value="." selected> Class </option>
-                <option value="#"> Id </option>
-                <option value=""> Element </option>
-            </select>
-        </div>
-        <div class="input">
-            <label for="selector">Selector : </label>
-            <input type="text" name="selector" id="selector" value="FbsYi" required>
-        </div>
-        <div class="div-btn">
-            <button type="submit"> Ajouter selecteur </button>
-        </div>
+    <div> <!-- Ajouter un selecteur -->
+        <form id="AddSelector" name="AddSelector">
+            <div class="input">
+                <label for="typeSelector">Type : </label>
+                <select id="typeSelector" name="type">
+                    <option value="." selected> Class </option>
+                    <option value="#"> Id </option>
+                    <option value=""> Element </option>
+                </select>
+            </div>
+            <div class="input">
+                <label for="selector">Selector : </label>
+                <input type="text" name="selector" id="selector" required>
+            </div>
+            <div class="div-btn">
+                <button class="btn" type="submit"> Ajouter selecteur </button>
+            </div>
+        </form>
+    </div>
 
-    </form>
+    <div>
+        <h4 id="h-liste"> Liste des selecteurs <span class="btn"> Afficher </span></h4>
+        <div id="list"></div>
+    </div>
+
 </main>
 
 </body>

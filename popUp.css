@@ -14,14 +14,14 @@ body {
 }
 
 header > div {
-    margin: 0;
+    margin: 0 5px;
     width: 95%;
     background-color: #1f1f1f;
 }
 
 h1 {
     color: #c4151c;
-    margin: 0;
+    margin: 0 4%;
 }
 
 main {
@@ -29,7 +29,7 @@ main {
     font-size: 150%;
 }
 
-button {
+.btn {
     background-color: #921616 ;
     color: white;
     border-radius: 5px;
@@ -37,6 +37,9 @@ button {
     width: 100%;
     padding: 5px 10px;
     font-size: 115%;
+    cursor: pointer;
+    box-shadow: 2px 1px 3px #320000;
+    border: #320000 solid 1px;
 }
 
 .div-btn {
@@ -46,4 +49,20 @@ button {
 
 input, select, option {
     width: 60%;
+}
+
+#h-liste > span {
+
+
+}
+
+#list {
+    font-size: 20px;
+}
+
+#list > div {
+    height: 26px;
+    width: 80%;
+    margin: 5px auto;
+    text-align: center;
 }
