@@ -1,8 +1,8 @@
 {
   "name": "AdBlockPlusUltra",
   "author": "Kalat",
-  "description": "Permet de masquer les pub sur JapScan",
-  "version": "2.0",
+  "description": "AdBlockPlusUltra",
+  "version": "2.1",
   "background": {
     "scripts": ["background.js"],
     "persistent": true
@@ -12,7 +12,7 @@
     "default_popup": "popUp.html"
   },
   "content_scripts": [{
-    "matches": ["http://*.japscan.se/*", "https://*.japscan.se/*"],
+    "matches": ["http://*/*", "https://*/*"],
     "js": ["app.js"]
   }],
   "permissions": ["storage", "webNavigation", "activeTab"],

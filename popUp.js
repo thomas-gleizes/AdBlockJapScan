@@ -18,7 +18,6 @@ document.querySelector("#AddSelector").addEventListener('submit', event => {
                 alert("Le selectors existe déja.")
             }
         }
-        generateListe(document.querySelector("#h-liste > .btn"))
     });
 })
 

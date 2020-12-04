@@ -47,12 +47,16 @@ main {
     width: 80%;
 }
 
-input, select, option {
-    width: 60%;
+#selector {
+    width: 65%;
+}
+
+#typeSelector {
+    width: 79%;
 }
 
 .row {
-    display: flex;
+    margin: 5px auto;
 }
 
 #h-liste {
@@ -74,4 +78,8 @@ input, select, option {
     position: relative;
     top: 5px;
     cursor: pointer;
+}
+
+.inpt {
+
 }

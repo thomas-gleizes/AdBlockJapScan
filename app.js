@@ -11,6 +11,7 @@ chrome.storage.sync.get(['selectors'], result => {
 
 
 const deleteAdd = () => {
+    console.log("delete Add")
     selectors.forEach(selector => {
         const adds = document.querySelectorAll(selector)
         adds.forEach(add => {
