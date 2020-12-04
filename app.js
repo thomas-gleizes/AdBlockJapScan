@@ -1,17 +1,13 @@
-// const selectors = ['.FbsYi', '.vdo_floating', '#vdo_ads_frame', '.ts-inpage-push-dating']
-
+let timer = false;
 let selectors = [];
 
 chrome.storage.sync.get(['selectors'], result => {
     selectors = result.selectors
-    console.log(selectors)
     deleteAdd()
-    window.setInterval(deleteAdd, 1000)
 });
 
 
 const deleteAdd = () => {
-    console.log("delete Add")
     selectors.forEach(selector => {
         const adds = document.querySelectorAll(selector)
         adds.forEach(add => {
@@ -23,3 +19,14 @@ const deleteAdd = () => {
     });
 }
 
+const update = () => {
+    if (!timer) {
+        timer = true
+        deleteAdd()
+        setTimeout(() => {
+            timer = false
+        }, 1000)
+    }
+}
+
+window.addEventListener("DOMNodeInserted", update)
