@@ -13,10 +13,13 @@ body {
     font-family: sans-serif;
 }
 
-header > div {
-    margin: 0 5px;
+header  {
     width: 95%;
-    background-color: #1f1f1f;
+    display: inline-flex;
+}
+
+.button-switch {
+    top: 35px;
 }
 
 h1 {
@@ -48,11 +51,11 @@ main {
 }
 
 #selector {
-    width: 65%;
+    width: 67%;
 }
 
 #typeSelector {
-    width: 79%;
+    width: 78%;
 }
 
 .row {
@@ -80,6 +83,3 @@ main {
     cursor: pointer;
 }
 
-.inpt {
-
-}

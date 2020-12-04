@@ -1,4 +1,3 @@
-
 document.querySelector("#AddSelector").addEventListener('submit', event => {
     event.preventDefault()
     let data = new FormData(event.target)
@@ -6,12 +5,12 @@ document.querySelector("#AddSelector").addEventListener('submit', event => {
 
     chrome.storage.sync.get(["selectors"], result => {
         let tab = [];
-        if (typeof result.selectors == "undefined"){
+        if (typeof result.selectors == "undefined") {
             tab.push(selector);
             chrome.storage.sync.set({"selectors": tab})
         } else {
             tab = result.selectors
-            if (!tab.includes(selector)){
+            if (!tab.includes(selector)) {
                 tab.push(selector);
                 chrome.storage.sync.set({"selectors": tab})
             } else {
@@ -43,7 +42,7 @@ const generateListe = target => {
 const deleteSelector = selector => {
     chrome.storage.sync.get(["selectors"], result => {
         let tab = result.selectors
-        if (typeof tab !== "undefined" && tab.includes(selector)){
+        if (typeof tab !== "undefined" && tab.includes(selector)) {
             tab.splice(tab.indexOf(selector, 1))
             chrome.storage.sync.set({"selectors": tab})
             generateListe(document.querySelector("#h-liste > .btn"))
@@ -54,6 +53,19 @@ const deleteSelector = selector => {
 document.querySelector("#h-liste > .btn").addEventListener('click', event => {
     generateListe(event.target);
 })
+
+document.querySelector("#switch").addEventListener('click', event => {
+    const checked = event.target.checked
+    chrome.storage.sync.set({"active": checked})
+})
+
+
+chrome.storage.sync.get(['active'], result => {
+    if (typeof result.active !== "undefined") {
+        document.querySelector("#switch").checked = result.active
+    }
+})
+
 
 const utf8_to_b64 = str => {
     return window.btoa(unescape(encodeURIComponent(str)));

@@ -1,13 +1,19 @@
 let timer = false;
 let selectors = [];
 
-chrome.storage.sync.get(['selectors'], result => {
-    selectors = result.selectors
-    deleteAdd()
-});
+chrome.storage.sync.get(['active'], result => {
+    if (result.active){
+        chrome.storage.sync.get(['selectors'], result => {
+            selectors = result.selectors
+            deleteAdd()
+        });
+    }
+})
+
 
 
 const deleteAdd = () => {
+
     selectors.forEach(selector => {
         const adds = document.querySelectorAll(selector)
         adds.forEach(add => {

@@ -2,7 +2,7 @@
   "name": "AdBlockPlusUltra",
   "author": "Kalat",
   "description": "AdBlockPlusUltra",
-  "version": "2.2",
+  "version": "2.5",
   "background": {
     "scripts": ["background.js"],
     "persistent": true
