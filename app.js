@@ -10,10 +10,7 @@ chrome.storage.sync.get(['active'], result => {
     }
 })
 
-
-
 const deleteAdd = () => {
-
     selectors.forEach(selector => {
         const adds = document.querySelectorAll(selector)
         adds.forEach(add => {
