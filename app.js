@@ -6,6 +6,7 @@ chrome.storage.sync.get(['active'], result => {
         chrome.storage.sync.get(['selectors'], result => {
             selectors = result.selectors
             deleteAdd()
+            setInterval(deleteAdd, 1000)
         });
     }
 })
